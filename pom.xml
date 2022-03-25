@@ -138,39 +138,6 @@
 		</dependency>
 
 	</dependencies>
-	<build>
-		<plugins>
-			<!-- Code coverage -->
-			<plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.4</version>
-                <configuration>
-                    <skip>false</skip>
-                    <includes></includes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>default-prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <configuration>
-                            <outputDirectory>${basedir}/target/jacoco.exec</outputDirectory>
-                        </configuration>
-                        <id>default-report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-		</plugins>
-	</build>
-
 	<distributionManagement>
 		<repository>
 			<id>commons</id>
