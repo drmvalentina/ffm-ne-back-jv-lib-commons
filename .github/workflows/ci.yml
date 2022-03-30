@@ -14,8 +14,6 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Tag
-        run: |
-            tag = sed -n 6p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g'
-      - name: Use the value
-        run: |
-          echo $tag
+        env:
+          TAG: sed -n 6p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g'
+        run: echo $TAG
