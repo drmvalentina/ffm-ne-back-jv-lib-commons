@@ -16,4 +16,4 @@ jobs:
       - name: Test
         run: mvn --batch-mode test
       - name: Tag
-        run: grep version pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g'
+        run: sed -n 7p prueba.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g'
