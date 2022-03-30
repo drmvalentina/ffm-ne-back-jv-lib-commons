@@ -17,7 +17,7 @@ jobs:
         run: mvn --batch-mode test
       - name: Tag
         run: |
-          echo "sed -n 6p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g'" >> $tag
+          echo "tag = sed -n 6p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g'"
       - name: Use the value
         run: |
           echo $tag
