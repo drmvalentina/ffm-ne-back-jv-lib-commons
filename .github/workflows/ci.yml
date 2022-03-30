@@ -16,8 +16,7 @@ jobs:
       - name: Test
         run: mvn --batch-mode test
       - name: Tag
-        run: |
-          echo "tag = sed -n 7p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g'" >> $tag
+        run: sed -n 7p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g' >> tag
       - name: Use the value
         run: |
           echo "${{ env.tag }}"
