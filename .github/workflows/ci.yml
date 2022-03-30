@@ -15,5 +15,5 @@ jobs:
           distribution: 'adopt'
       - name: Tag
         env:
-          TAG: $(sed -n 6p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g')
+          TAG: echo "TAG=$(sed -n 6p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g')" >> $GITHUB_ENV
         run: echo $TAG
