@@ -13,11 +13,9 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Test
-        run: mvn --batch-mode test
       - name: Tag
         run: |
-          echo "tag = sed -n 6p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g'"
+            tag = sed -n 6p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g'
       - name: Use the value
         run: |
           echo $tag
