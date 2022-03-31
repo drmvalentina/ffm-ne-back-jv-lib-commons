@@ -21,7 +21,6 @@ jobs:
         id: tag
         uses: actions/github-script@0.2.0
         with:
-          github-token: ${{ secrets.TOKEN }}
           script: |
             return sed -n 6p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g');
       - name: Echo
