@@ -23,6 +23,6 @@ jobs:
         with:
           github-token: ${{ secrets.TOKEN }}
           script: |
-            return context.payload.ref.replace(/\/refs\/tags\//, '');
+            return sed -n 6p pom.xml | sed -e 's/<version>//g' | sed -e 's/<\/version>//g');
       - name: Echo
         run: echo ${{ steps.tag.outputs.result }}
